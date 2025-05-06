@@ -1,71 +1,59 @@
 :root {
-    --black: #fff;
-    --white: #121212;
-    --gray: #222;
-    --bg-color: var(--white);
-    --text-color: var(--black);
-    --accent-color: #6ee7b7;
-    --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --theme-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-  
-  [data-theme="light"] {
-    --black: #000;
-    --white: #fff;
-    --gray: #f5f5f5;
-    --bg-color: var(--white);
-    --text-color: var(--black);
-    --accent-color: #6ee7b7;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    cursor: none !important;
-    transition: var(--theme-transition);
-  }
-  
-  .cursor {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%) scale(1);
-    transition: 
-      transform 0.1s ease,
-      background-color 0.8s cubic-bezier(0.77, 0, 0.175, 1),
-      width 0.3s ease,
-      height 0.3s ease;
-  }
+  --black: #fff;
+  --white: #121212;
+  --gray: #222;
+  --bg-color: var(--white);
+  --text-color: var(--black);
+  --accent-color: #6ee7b7;
+  --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --theme-transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
 
-  [data-theme="dark"] .cursor {
-    background-color: #fff;
-  }
+[data-theme="light"] {
+  --black: #000;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --bg-color: var(--white);
+  --text-color: var(--black);
+  --accent-color: #6ee7b7;
+}
 
-  [data-theme="light"] .cursor {
-    background-color: #000;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
 
-  html, * {
-    cursor: none !important;
-  }
-  
-  .cursor.active {
-    transform: translate(-50%, -50%) scale(2);
-    background-color: var(--accent-color);
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: var(--theme-transition);
+}
+
+.cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  transition: 
+    transform 0.1s ease,
+    background-color 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  opacity: 1 !important;
+}
+
+.cursor.active {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: var(--accent-color);
+}
+
   
   .container {
     max-width: 1400px;
@@ -402,3 +390,85 @@
       height: 300px;
     }
   }
+
+  /* Стили для калькулятора */
+.pricing-calculator {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(0,0,0,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .pricing-calculator {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.price-result {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .price-result {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+.price-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--accent-color);
+}
+
+.price-note {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+}
+
+/* Стили для выпадающего меню */
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+  color: var(--text-color);
+}
+
+select.form-input option {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Для темной темы */
+[data-theme="dark"] select.form-input option {
+  background: #121212;
+  color: #fff;
+}
+
+/* Для светлой темы */
+[data-theme="light"] select.form-input option {
+  background: #fff;
+  color: #000;
+}

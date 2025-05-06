@@ -14,13 +14,14 @@
   <div class="loader">
     <div class="loader-content">
       <div class="loader-text">NΛLL</div>
+      <div class="loader-subtext">Загружаю вселенную</div>
     </div>
   </div>
 
   <header class="container">
     <a href="#" class="logo">NΛLL</a>
     <nav class="nav">
-      <a href="#work" class="nav-link">Работы</a>
+      <a href="#pricing" class="nav-link">Расценки</a>
       <a href="#about" class="nav-link">Обо мне</a>
       <a href="#contact" class="nav-link">Контакты</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
@@ -36,38 +37,39 @@
     <section class="hero container">
       <h1 class="hero-title">Создаю цифровые продукты</h1>
       <p class="hero-subtitle">Дизайн и разработка с акцентом на эстетику и функциональность. Минимализм — это совершенство того, что осталось.</p>
-      <a href="#work" class="btn">Смотреть работы</a>
+      <a href="#pricing" class="btn">Узнать стоимость</a>
     </section>
 
-    <section id="work" class="section container">
-      <h2 class="section-title">Избранные проекты</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="https://source.unsplash.com/random/800x1000/?design,tech" alt="Проект 1" class="project-image">
-          <div class="project-info">
-            <h3 class="project-title">Проект Aurora</h3>
-            <p class="project-category">Веб-дизайн</p>
+    <section id="pricing" class="section container">
+      <h2 class="section-title">Расценки</h2>
+      <div class="pricing-calculator">
+        <div class="calculator-form">
+          <div class="form-group">
+            <label for="pages" class="form-label">Количество страниц сайта</label>
+            <select id="pages" class="form-input">
+              <option value="1">1 страница</option>
+              <option value="2">2 страницы</option>
+              <option value="3">3 страницы</option>
+              <option value="4">4 страницы</option>
+              <option value="5">5 страниц</option>
+              <option value="6">6+ страниц (индивидуально)</option>
+            </select>
           </div>
-        </div>
-        <div class="project-card">
-          <img src="https://source.unsplash.com/random/800x1000/?interface,ui" alt="Проект 2" class="project-image">
-          <div class="project-info">
-            <h3 class="project-title">Проект Noir</h3>
-            <p class="project-category">Брендинг</p>
+
+          <div class="form-group">
+            <label for="interactivity" class="form-label">Интерактивные элементы</label>
+            <select id="interactivity" class="form-input">
+              <option value="0">Базовые (без анимаций)</option>
+              <option value="1">Стандартные (простые эффекты)</option>
+              <option value="2">Продвинутые (сложные переходы)</option>
+              <option value="3">Премиум (кастомные анимации)</option>
+            </select>
           </div>
-        </div>
-        <div class="project-card">
-          <img src="https://source.unsplash.com/random/800x1000/?code,programming" alt="Проект 3" class="project-image">
-          <div class="project-info">
-            <h3 class="project-title">Проект Sol</h3>
-            <p class="project-category">Разработка</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://source.unsplash.com/random/800x1000/?art,creative" alt="Проект 4" class="project-image">
-          <div class="project-info">
-            <h3 class="project-title">Проект Luna</h3>
-            <p class="project-category">Анимация</p>
+
+          <div class="price-result">
+            <h3>Примерная стоимость:</h3>
+            <div class="price-amount" id="price-amount"> 5 000 ₽</div>
+            <p class="price-note">* Точная стоимость рассчитывается индивидуально после обсуждения</p>
           </div>
         </div>
       </div>
@@ -79,8 +81,7 @@
         <div class="about-text">
           <p>Я NΛLL — энтузиаст цифрового дизайна, самостоятельно осваивающий создание чистых, минималистичных интерфейсов.</p>
           <p>Мой путь только начинается, но я уже глубоко погрузился в изучение типографики, композиции и UX-принципов.</p>
-          <p>Сейчас я сосредоточен на personal-проектах, где оттачиваю своё понимание «хорошего дизайна» — того, что решает проблемы, а не создаёт их.</p>
-          <p>Вдохновляюсь работами ведущих дизайн-студий и постепенно формирую собственный стиль.</p>
+          <p>Сейчас я сосредоточен на personal-проектах, где оттачиваю своё понимание «хорошего дизайна».</p>
         </div>
         <div class="about-image"></div>
       </div>
@@ -88,26 +89,27 @@
 
     <section id="contact" class="section container">
       <h2 class="section-title">Связаться со мной</h2>
-      <form class="contact-form">
+      <form id="contact-form" class="contact-form">
         <div class="form-group">
           <label for="name" class="form-label">Имя</label>
-          <input type="text" id="name" class="form-input" required>
+          <input type="text" id="name" name="name" class="form-input" required>
         </div>
         <div class="form-group">
           <label for="email" class="form-label">Email</label>
-          <input type="email" id="email" class="form-input" required>
+          <input type="email" id="email" name="email" class="form-input" required>
         </div>
         <div class="form-group">
           <label for="message" class="form-label">Сообщение</label>
-          <textarea id="message" class="form-input" rows="5" required></textarea>
+          <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Отправить</button>
+        <div id="form-message" class="form-message"></div>
       </form>
     </section>
   </main>
 
   <footer class="container">
-    <p>© 2025 NΛLL. </p>
+    <p>© 2025 NΛLL..</p>
   </footer>
 
   <script src="js/loader.js"></script>
