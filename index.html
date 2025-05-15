@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NΛLL | Цифровые решения</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
@@ -12,65 +13,82 @@
   <div class="cursor"></div>
 
   <div class="loader">
-    <div class="loader-content">
-      <div class="loader-text">NΛLL</div>
-      <div class="loader-subtext">Загружаю вселенную</div>
-    </div>
+    <div class="loader-content">NΛLL</div>
   </div>
 
-  <header class="container">
-    <a href="#" class="logo">NΛLL</a>
-    <nav class="nav">
-      <a href="#pricing" class="nav-link">Расценки</a>
-      <a href="#about" class="nav-link">Обо мне</a>
-      <a href="#contact" class="nav-link">Контакты</a>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
-        <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20">
-          <path class="sun" fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 11v2h3v-2h-3zm14 0v2h3v-2h-3z"/>
-          <path class="moon" fill="currentColor" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
-        </svg>
-      </button>
-    </nav>
+  <div id="notification" class="notification"></div>
+
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">NΛLL</a>
+      <nav class="nav">
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#technologies" class="nav-link">Технологии</a>
+        <a href="#about" class="nav-link">Обо мне</a>
+        <a href="#contact" class="nav-link">Контакты</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+          <svg class="theme-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path class="sun" fill="currentColor" d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 11v2h3v-2h-3zm14 0v2h3v-2h-3z"/>
+            <path class="moon" fill="currentColor" d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero container">
-      <h1 class="hero-title">Создаю цифровые продукты</h1>
-      <p class="hero-subtitle">Дизайн и разработка с акцентом на эстетику и функциональность. Минимализм — это совершенство того, что осталось.</p>
-      <a href="#pricing" class="btn">Узнать стоимость</a>
+      <h1 class="hero-title">Создание цифровых решений</h1>
+      <p class="hero-subtitle">Минималистичный дизайн и безупречная функциональность для современного мира.</p>
+      <a href="#services" class="btn">Ознакомиться с услугами</a>
     </section>
 
-    <section id="pricing" class="section container">
-      <h2 class="section-title">Расценки</h2>
-      <div class="pricing-calculator">
-        <div class="calculator-form">
-          <div class="form-group">
-            <label for="pages" class="form-label">Количество страниц сайта</label>
-            <select id="pages" class="form-input">
-              <option value="1">1 страница</option>
-              <option value="2">2 страницы</option>
-              <option value="3">3 страницы</option>
-              <option value="4">4 страницы</option>
-              <option value="5">5 страниц</option>
-              <option value="6">6+ страниц (индивидуально)</option>
-            </select>
+    <section id="services" class="section container">
+      <h2 class="section-title">Услуги</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="images/UIUX.jpg" alt="UI/UX Дизайн" class="service-image">
+          <div class="service-info">
+            <h3 class="service-title">UI/UX Дизайн</h3>
+            <p class="service-description">Создание интуитивных и эстетичных интерфейсов, ориентированных на пользователя.</p>
           </div>
+        </div>
+        <div class="service-card">
+          <img src="images/WEB.jpg" alt="Веб-разработка" class="service-image">
+          <div class="service-info">
+            <h3 class="service-title">Веб-разработка</h3>
+            <p class="service-description">Разработка современных, быстрых и адаптивных веб-сайтов.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="form-group">
-            <label for="interactivity" class="form-label">Интерактивные элементы</label>
-            <select id="interactivity" class="form-input">
-              <option value="0">Базовые (без анимаций)</option>
-              <option value="1">Стандартные (простые эффекты)</option>
-              <option value="2">Продвинутые (сложные переходы)</option>
-              <option value="3">Премиум (кастомные анимации)</option>
-            </select>
-          </div>
-
-          <div class="price-result">
-            <h3>Примерная стоимость:</h3>
-            <div class="price-amount" id="price-amount"> 5 000 ₽</div>
-            <p class="price-note">* Точная стоимость рассчитывается индивидуально после обсуждения</p>
-          </div>
+    <section id="technologies" class="section container">
+      <h2 class="section-title">Технологии</h2>
+      <div class="technologies-grid">
+        <div class="tech-card">
+          <i class="fab fa-html5 tech-icon"></i>
+          <h3 class="tech-title">HTML</h3>
+        </div>
+        <div class="tech-card">
+          <i class="fab fa-css3-alt tech-icon"></i>
+          <h3 class="tech-title">CSS</h3>
+        </div>
+        <div class="tech-card">
+          <i class="fab fa-js tech-icon"></i>
+          <h3 class="tech-title">JavaScript</h3>
+        </div>
+        <div class="tech-card">
+          <i class="fab fa-react tech-icon"></i>
+          <h3 class="tech-title">React.js</h3>
+        </div>
+        <div class="tech-card">
+          <i class="fab fa-vuejs tech-icon"></i>
+          <h3 class="tech-title">Vue.js</h3>
+        </div>
+        <div class="tech-card">
+          <i class="fas fa-rocket tech-icon"></i>
+          <h3 class="tech-title">Vite.js</h3>
         </div>
       </div>
     </section>
@@ -78,38 +96,26 @@
     <section id="about" class="section container">
       <h2 class="section-title">Обо мне</h2>
       <div class="about-content">
-        <div class="about-text">
-          <p>Я NΛLL — энтузиаст цифрового дизайна, самостоятельно осваивающий создание чистых, минималистичных интерфейсов.</p>
-          <p>Мой путь только начинается, но я уже глубоко погрузился в изучение типографики, композиции и UX-принципов.</p>
-          <p>Сейчас я сосредоточен на personal-проектах, где оттачиваю своё понимание «хорошего дизайна».</p>
-        </div>
-        <div class="about-image"></div>
+        <img src="images/NULLimage.jpg" alt="NΛLL" class="about-image">
+        <p class="about-text">Я NΛLL, цифровой дизайнер и разработчик, увлечённый созданием чистых и продуманных интерфейсов. Моя философия — минимализм, где каждый элемент имеет значение. Сейчас я исследую новые способы сочетания эстетики и функциональности.</p>
       </div>
     </section>
 
     <section id="contact" class="section container">
-      <h2 class="section-title">Связаться со мной</h2>
-      <form id="contact-form" class="contact-form">
-        <div class="form-group">
-          <label for="name" class="form-label">Имя</label>
-          <input type="text" id="name" name="name" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" id="email" name="email" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label for="message" class="form-label">Сообщение</label>
-          <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Отправить</button>
-        <div id="form-message" class="form-message"></div>
-      </form>
+      <h2 class="section-title">Контакты</h2>
+      <div class="contact-methods">
+        <a href="#" class="contact-card" onclick="copyEmailAndOpenGmail(event)">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-1.1-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span>nullcrop@gmail.com</span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="container">
-    <p>© 2025 NΛLL..</p>
+    <p>© 2025 NΛLL</p>
   </footer>
 
   <script src="js/loader.js"></script>
