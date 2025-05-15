@@ -7,20 +7,26 @@ function initTheme() {
 
 function updateCursorColor(theme) {
   const cursor = document.querySelector('.cursor');
-  cursor.style.backgroundColor = theme === 'dark' ? '#ffffff' : '#000000'; // Accent color for cursor
+  if (cursor) {
+    cursor.style.backgroundColor = theme === 'dark' ? '#ffffff' : '#000000';
+  }
 }
 
 function initCursor() {
-  const cursor = document.querySelector('.cursor');
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-  });
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const cursor = document.querySelector('.cursor');
+    if (cursor) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      });
 
-  document.querySelectorAll('a, button, .service-card, .tech-card, .btn').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('active'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
-  });
+      document.querySelectorAll('a, button, .service-card, .tech-card, .btn').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+      });
+    }
+  }
 }
 
 function showNotification(message) {
@@ -36,10 +42,8 @@ function copyEmailAndOpenGmail(event) {
   event.preventDefault();
   const email = 'nullcrop@gmail.com';
   
-  // Copy email to clipboard
   navigator.clipboard.writeText(email).then(() => {
     showNotification('Адрес электронной почты скопирован: ' + email);
-    // Open Gmail in a new tab
     window.open('https://mail.google.com', '_blank');
   }).catch((err) => {
     console.error('Не удалось скопировать адрес: ', err);
@@ -67,10 +71,25 @@ function initSmoothScroll() {
   });
 }
 
+function initMenuToggle() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+    });
+  });
+}
+
 function init() {
   initTheme();
   initCursor();
   initSmoothScroll();
+  initMenuToggle();
   document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 }
 
